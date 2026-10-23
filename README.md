@@ -20,6 +20,7 @@
 - [System Architecture](#-system-architecture)
 - [Monorepo Structure](#-monorepo-structure)
 - [Tech Stack](#-tech-stack)
+- [Enterprise Observability](#-enterprise-observability)
 - [Multi-Language Support (i18n)](#-multi-language-support-i18n)
 - [Quick Start Guide (Local Setup)](#-quick-start-guide-local-setup)
 - [Security & Privacy](#-security--privacy)
@@ -141,6 +142,29 @@ qiaflo/
 - **Styling:** TailwindCSS
 - **Map Visualizations:** Leaflet & React Leaflet
 - **Icons:** Lucide Icons
+
+---
+
+## 📊 Enterprise Observability
+
+```text
+┌────────────────────────────────────────────────────────────────────────┐
+│                       OBSERVABILITY ARCHITECTURE                       │
+├──────────────────────────┬──────────────────────┬──────────────────────┤
+│       1. METRICS         │       2. LOGS        │  3. CRASH & ALERTS   │
+├──────────────────────────┼──────────────────────┼──────────────────────┤
+│ • Prometheus Scraper     │ • Fastify Pino Logs  │ • Firebase Crashlytic│
+│ • Node Exporter (Host)   │ • Promtail Log Agent │ • Talker In-App Log  │
+│   - CPU & Memory stats   │ • Grafana Loki Engine│ • Automated Dispatch │
+│   - Container telemetry  │   - Structured events│   - Critical Alerts  │
+└──────────────────────────┴──────────────────────┴──────────────────────┘
+                                     │
+                                     ▼
+                ┌──────────────────────────────────────────┐
+                │        Grafana Unified Dashboard         │
+                │     (Centralized Metrics & Telemetry)    │
+                └──────────────────────────────────────────┘
+```
 
 ---
 
