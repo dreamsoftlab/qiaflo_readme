@@ -7,7 +7,7 @@
 [![Next.js](https://img.shields.io/badge/Dashboard-Next.js-000000?logo=next.js)](https://nextjs.org)
 [![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-336791?logo=postgresql)](https://postgresql.org)
 [![Redis](https://img.shields.io/badge/Queue-Redis%20%26%20BullMQ-DC382D?logo=redis)](https://redis.io)
-[![Gemini](https://img.shields.io/badge/AI-Google%20Gemini-4285F4?logo=google)](https://ai.google.dev)
+[![Meta AI](https://img.shields.io/badge/AI-Meta%20AI-0081FB?logo=meta)](https://ai.meta.com)
 [![OpenStreetMap](https://img.shields.io/badge/Maps-OpenStreetMap-7EBC6F?logo=openstreetmap)](https://www.openstreetmap.org)
 [![i18n](https://img.shields.io/badge/i18n-5%20Bahasa%20(ID%20%7C%20EN%20%7C%20ES%20%7C%20PT%20%7C%20ZH)-blue)](#-dukungan-multi-bahasa-i18n)
 
@@ -47,7 +47,7 @@
 | **Radar Mode Jarak Dekat** | Visual radar berbasis kekuatan sinyal RSSI untuk membantu melacak keberadaan hewan di area terdekat. |
 | **Mode Darurat (Lost Mode)** | Mengirimkan sinyal darurat dalam radius tertentu dan mengerahkan pemindai pasif komunitas sekitar. |
 | **Laporan Penampakan (Sighting Reports)** | Pengguna komunitas dapat mengirim laporan penampakan hewan hilang disertai foto, koordinat GPS, dan info kontak. |
-| **AI Guardian (Konsultasi & Analisis Visual)** | Asisten multimodal bertenaga Google Gemini untuk tanya jawab kesehatan serta pemeriksaan gejala fisik via foto/video. |
+| **AI Guardian (Konsultasi & Analisis Visual)** | Asisten multimodal bertenaga AI Meta untuk tanya jawab kesehatan serta pemeriksaan gejala fisik via foto/video. |
 | **AI Voice Assistant (Percakapan Suara)** | Sesi konsultasi dua arah berbasis suara secara alami dan langsung dengan AI asisten pet care. |
 | **Pet Walk Tracker** | Mencatat rute jalan-jalan, hitungan langkah pedometer, jarak, durasi, poin bonding, dan rekor konsistensi mingguan. |
 | **Daily Pet Quiz** | Kuis edukasi harian interaktif seputar ras hewan peliharaan untuk mengasah wawasan dan mengumpulkan reward koin. |
@@ -75,7 +75,7 @@ Platform Qiaflo dibangun menggunakan arsitektur monorepo modular berstandar mode
 │    • Autentikasi: JWT Aman & Google OAuth Verification │
 │    • Validasi Data: Zod Schema Validation              │
 │    • Antrean Latar Belakang: Redis & BullMQ            │
-│    • Multi-Agent AI Engine: Google Gemini Integrations │
+│    • Multi-Agent AI Engine: Meta AI                    │
 └─────────────┬────────────────────────────┬─────────────┘
               │                            │
               ▼                            ▼
@@ -125,7 +125,7 @@ qiaflo/
 - **State Management:** Flutter Riverpod
 - **Peta & Lokasi:** OpenStreetMap (`flutter_map`) + Geolocator
 - **Sensor:** `flutter_reactive_ble`, `pedometer`, `camera`
-- **Kecerdasan Buatan:** Gemini Live WebSockets & Google Generative AI
+- **Kecerdasan Buatan:** Meta AI, Gemini Live WebSockets & Google Generative AI
 - **Gaya Antarmuka:** Material 3 Dinamis (Dukungan penuh Mode Gelap dan Terang)
 
 ### ⚙️ Backend API
