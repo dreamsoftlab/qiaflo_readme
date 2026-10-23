@@ -1,6 +1,6 @@
 # 🐾 Qiaflo — AI-Powered Pet Guardian Network
 
-> Platform komunitas terdistribusi berbasis AI untuk melindungi, melacak, dan merawat hewan peliharaan menggunakan jaringan sensor Bluetooth Low Energy (BLE), asisten kesehatan AI Guardian multimodal, pelacak jalan-jalan (Pet Walk), peta real-time, serta dukungan 5 bahasa.
+> A distributed AI-powered community platform designed to protect, track, and care for pets using a Bluetooth Low Energy (BLE) sensor network, multimodal AI Guardian health assistants, real-time activity tracking (Pet Walk), live maps, and full 5-language localization.
 
 [![Flutter](https://img.shields.io/badge/Mobile-Flutter-02569B?logo=flutter)](https://flutter.dev)
 [![Fastify](https://img.shields.io/badge/Backend-Fastify-000000?logo=fastify)](https://fastify.dev)
@@ -9,190 +9,190 @@
 [![Redis](https://img.shields.io/badge/Queue-Redis%20%26%20BullMQ-DC382D?logo=redis)](https://redis.io)
 [![Meta AI](https://img.shields.io/badge/AI-Meta%20AI-0081FB?logo=meta)](https://ai.meta.com)
 [![OpenStreetMap](https://img.shields.io/badge/Maps-OpenStreetMap-7EBC6F?logo=openstreetmap)](https://www.openstreetmap.org)
-[![i18n](https://img.shields.io/badge/i18n-5%20Bahasa%20(ID%20%7C%20EN%20%7C%20ES%20%7C%20PT%20%7C%20ZH)-blue)](#-dukungan-multi-bahasa-i18n)
+[![i18n](https://img.shields.io/badge/i18n-5%20Languages%20(EN%20%7C%20ID%20%7C%20ES%20%7C%20PT%20%7C%20ZH)-blue)](#-multi-language-support-i18n)
 
 ---
 
-## 📌 Daftar Isi
+## 📌 Table of Contents
 
-- [Tentang Qiaflo](#-tentang-qiaflo)
-- [Fitur Utama](#-fitur-utama)
-- [Arsitektur Sistem](#-arsitektur-sistem)
-- [Struktur Monorepo](#-struktur-monorepo)
-- [Teknologi yang Digunakan](#-teknologi-yang-digunakan)
-- [Dukungan Multi-Bahasa (i18n)](#-dukungan-multi-bahasa-i18n)
-- [Panduan Memulai Cepat (Local Setup)](#-panduan-memulai-cepat-local-setup)
-- [Keamanan & Privasi](#-keamanan--privasi)
-- [Model Bisnis & Ekonomi In-App](#-model-bisnis--ekonomi-in-app)
-- [Lisensi & Hak Cipta](#-lisensi--hak-cipta)
-
----
-
-## 🌟 Tentang Qiaflo
-
-**Qiaflo** adalah ekosistem pintar yang menggabungkan kecerdasan buatan (AI) dan jaringan sensor komunitas (Bluetooth Low Energy / BLE). Platform ini dirancang untuk:
-
-1. **Mencegah Kehilangan Hewan:** Menggunakan pelacakan sinyal BLE hemat daya dan jangkauan pencarian gotong-royong antar-pengguna aplikasi di sekitar.
-2. **Asisten Kesehatan AI Terpadu:** Membantu pemilik hewan berkonsultasi mengenai gejala fisik melalui analisis visual (foto/video) dan percakapan suara interaktif.
-3. **Membangun Komunitas Pecinta Hewan:** Melalui pelacak jalan-jalan (Pet Walk), gamifikasi kuis harian edukatif, serta ruang berbagi momen (Community Feed).
+- [About Qiaflo](#-about-qiaflo)
+- [Core Features](#-core-features)
+- [System Architecture](#-system-architecture)
+- [Monorepo Structure](#-monorepo-structure)
+- [Tech Stack](#-tech-stack)
+- [Multi-Language Support (i18n)](#-multi-language-support-i18n)
+- [Quick Start Guide (Local Setup)](#-quick-start-guide-local-setup)
+- [Security & Privacy](#-security--privacy)
+- [Business Model & In-App Economy](#-business-model--in-app-economy)
+- [License & Copyright](#-license--copyright)
 
 ---
 
-## 🚀 Fitur Utama
+## 🌟 About Qiaflo
 
-| Fitur | Deskripsi |
+**Qiaflo** is an intelligent ecosystem combining Artificial Intelligence (AI) and a community-driven sensor network (Bluetooth Low Energy / BLE). The platform is engineered to:
+
+1. **Prevent Pet Loss:** Utilizing power-efficient BLE signal tracking and decentralized community-assisted search radius coverage.
+2. **Integrated AI Health Assistant:** Assisting pet owners with symptom checks via multimodal visual analysis (photos/videos) and interactive natural voice conversations.
+3. **Engage Pet Communities:** Empowering owners through daily walk tracking (Pet Walk), gamified educational trivia quizzes, and social community feeds.
+
+---
+
+## 🚀 Core Features
+
+| Feature | Description |
 |---|---|
-| **BLE Beacon Pairing & Battery Monitor** | Menghubungkan tag BLE cerdas untuk memantau status sinyal dan daya baterai hewan peliharaan secara berkala. |
-| **Peta Interaktif Real-Time** | Menampilkan titik lokasi terakhir dan jejak rute aktivitas hewan peliharaan menggunakan OpenStreetMap. |
-| **Radar Mode Jarak Dekat** | Visual radar berbasis kekuatan sinyal RSSI untuk membantu melacak keberadaan hewan di area terdekat. |
-| **Mode Darurat (Lost Mode)** | Mengirimkan sinyal darurat dalam radius tertentu dan mengerahkan pemindai pasif komunitas sekitar. |
-| **Laporan Penampakan (Sighting Reports)** | Pengguna komunitas dapat mengirim laporan penampakan hewan hilang disertai foto, koordinat GPS, dan info kontak. |
-| **AI Guardian (Konsultasi & Analisis Visual)** | Asisten multimodal bertenaga AI Meta untuk tanya jawab kesehatan serta pemeriksaan gejala fisik via foto/video. |
-| **AI Voice Assistant (Percakapan Suara)** | Sesi konsultasi dua arah berbasis suara secara alami dan langsung dengan AI asisten pet care. |
-| **Pet Walk Tracker** | Mencatat rute jalan-jalan, hitungan langkah pedometer, jarak, durasi, poin bonding, dan rekor konsistensi mingguan. |
-| **Daily Pet Quiz** | Kuis edukasi harian interaktif seputar ras hewan peliharaan untuk mengasah wawasan dan mengumpulkan reward koin. |
-| **Community Feed & Pats** | Feed sosial untuk berbagi pencapaian jalan-jalan, penemuan hewan, serta saling mengirimkan interaksi "Pat" (elusan). |
-| **Rekam Medis Digital (Medical Hub)** | Arsip terstruktur riwayat vaksinasi, pengobatan harian, riwayat alergi, klinik dokter, dan grafik berat badan. |
+| **BLE Beacon Pairing & Battery Monitor** | Connects smart BLE tags to monitor pet signal strength and battery levels periodically. |
+| **Real-Time Interactive Maps** | Displays last known coordinates and activity route history using OpenStreetMap. |
+| **Proximity Radar Mode** | Visual radar powered by RSSI signal strength to guide close-range physical searches. |
+| **Emergency Lost Mode** | Broadcasts immediate alerts within a localized geographic radius and mobilizes background community scanners. |
+| **Sighting Reports** | Community members can submit verified lost pet sighting reports with GPS coordinates, photos, and contact info. |
+| **AI Guardian (Consultation & Visual Analysis)** | Multimodal assistant powered by Meta AI for pet care Q&A and physical symptom analysis via photos/videos. |
+| **AI Voice Assistant (Voice Conversation)** | Natural, low-latency, two-way interactive voice consultation session with the pet care AI assistant. |
+| **Pet Walk Tracker** | Records walking routes, pedometer steps, distance, duration, bonding points, and 7-day consistency streaks. |
+| **Daily Pet Quiz** | Interactive daily trivia tailored to specific pet breeds to test knowledge and earn virtual reward coins. |
+| **Community Feed & Pats** | Social feed to share walking milestones, found pet announcements, and send friendly "Pat" interactions. |
+| **Digital Medical Hub** | Structured digital archives for vaccination history, daily medications, allergies, vet visits, and weight charts. |
 
 ---
 
-## 🏗 Arsitektur Sistem
+## 🏗 System Architecture
 
-Platform Qiaflo dibangun menggunakan arsitektur monorepo modular berstandar modern:
+The Qiaflo platform is architected around a modern, modular monorepo model:
 
 ```
 ┌────────────────────────────────────────────────────────┐
-│                 Aplikasi Mobile (Flutter)              │
+│                 Mobile Client (Flutter)                │
 │    • State Management: Riverpod                        │
-│    • Jaringan: HTTP Client & WebSockets                │
-│    • Sensor: BLE Scanner pasif, GPS & Pedometer        │
-│    • Antarmuka: Material 3 Adaptif (Dark / Light)      │
+│    • Networking: HTTP Client & WebSockets              │
+│    • Sensors: Passive BLE Scanner, GPS & Pedometer     │
+│    • UI: Dynamic Material 3 (Adaptive Dark / Light)    │
 └───────────────────────────┬────────────────────────────┘
                             │ HTTPS / TLS
                             ▼
 ┌────────────────────────────────────────────────────────┐
-│             Gerbang API Backend (Fastify)              │
-│    • Autentikasi: JWT Aman & Google OAuth Verification │
-│    • Validasi Data: Zod Schema Validation              │
-│    • Antrean Latar Belakang: Redis & BullMQ            │
+│               Backend Gateway (Fastify)                │
+│    • Authentication: Secure JWT & Google OAuth Verify  │
+│    • Data Validation: Runtime Zod Schema Validation    │
+│    • Background Queue: Redis & BullMQ Worker Pipeline  │
 │    • Multi-Agent AI Engine: Meta AI                    │
 └─────────────┬────────────────────────────┬─────────────┘
               │                            │
               ▼                            ▼
 ┌───────────────────────────┐ ┌──────────────────────────┐
-│      Database & Cache     │ │   Dashboard Web & Admin  │
+│     Database & Cache      │ │  Admin Web & Simulator   │
 │  • PostgreSQL (Prisma ORM)│ │      (Next.js App)       │
-│  • Redis (Antrean & Cache)│ │  • Monitoring Platform   │
-│  • Penyimpanan Objek S3   │ │  • Web Simulator Peta    │
+│  • Redis (Queue & Cache)  │ │  • Platform Monitoring   │
+│  • S3 Object Storage      │ │  • Live Map Simulator    │
 └───────────────────────────┘ └──────────────────────────┘
 ```
 
 ---
 
-## 📂 Struktur Monorepo
+## 📂 Monorepo Structure
 
 ```text
 qiaflo/
-├── mobile/             # Aplikasi mobile multiplatform (Flutter / Dart)
+├── mobile/             # Cross-platform mobile app (Flutter / Dart)
 │   ├── lib/
-│   │   ├── core/       # Tema, jaringan, konfigurasi terpusat
-│   │   ├── features/   # Modul fitur (auth, pet, tracking, ai, walk, quiz)
-│   │   └── l10n/       # Kamus lokalisasi multi-bahasa (ARB)
-│   └── pubspec.yaml    # Dependensi aplikasi mobile
+│   │   ├── core/       # Theme, networking, centralized configuration
+│   │   ├── features/   # Feature modules (auth, pet, tracking, ai, walk, quiz)
+│   │   └── l10n/       # Multi-language localization dictionaries (ARB)
+│   └── pubspec.yaml    # Mobile dependencies and asset specifications
 │
 ├── backend/            # REST API & WebSocket server (Fastify / TypeScript)
 │   ├── src/
-│   │   ├── controllers/# Logika pengendali request
-│   │   ├── routes/     # Definisi endpoint API
-│   │   ├── services/   # Layanan bisnis (AI, email, notifikasi, storage)
-│   │   └── server.ts   # Entry point server
-│   ├── prisma/         # Skema database & migrasi data
-│   └── locales/        # Kamus lokalisasi server notifikasi (JSON)
+│   │   ├── controllers/# Request handlers and routing logic
+│   │   ├── routes/     # API endpoint declarations
+│   │   ├── services/   # Business logic (AI, email, notification, storage)
+│   │   └── server.ts   # Server application entry point
+│   ├── prisma/         # Database schema & migrations
+│   └── locales/        # Notification localization dictionaries (JSON)
 │
-└── dashboard/          # Panel kontrol admin & web simulator (Next.js / React)
+└── dashboard/          # Admin control panel & web simulator (Next.js / React)
     ├── src/
-    │   ├── app/        # Halaman rute dashboard
-    │   └── components/ # Komponen UI antarmuka web
+    │   ├── app/        # Dashboard route pages
+    │   └── components/ # Web interface components
     └── package.json
 ```
 
 ---
 
-## 💻 Teknologi yang Digunakan
+## 💻 Tech Stack
 
-### 📱 Aplikasi Mobile
-- **Bahasa & Framework:** Dart `^3.12` / Flutter Stable
+### 📱 Mobile Application
+- **Language & Framework:** Dart `^3.12` / Flutter Stable
 - **State Management:** Flutter Riverpod
-- **Peta & Lokasi:** OpenStreetMap (`flutter_map`) + Geolocator
-- **Sensor:** `flutter_reactive_ble`, `pedometer`, `camera`
-- **Kecerdasan Buatan:** Meta AI, Gemini Live WebSockets & Google Generative AI
-- **Gaya Antarmuka:** Material 3 Dinamis (Dukungan penuh Mode Gelap dan Terang)
+- **Maps & Location:** OpenStreetMap (`flutter_map`) + Geolocator
+- **Sensors & Hardware:** `flutter_reactive_ble`, `pedometer`, `camera`
+- **Artificial Intelligence:** Meta AI, Gemini Live WebSockets & Google Generative AI
+- **UI Design System:** Material 3 Adaptive (Full support for Dark and Light themes)
 
 ### ⚙️ Backend API
 - **Runtime:** Node.js v20+ / TypeScript ESM
-- **Framework Web:** Fastify (kinerja tinggi, latensi rendah)
+- **Web Framework:** Fastify (High performance, low overhead)
 - **Database & ORM:** PostgreSQL + Prisma ORM
-- **Antrean Tugas Asinkron:** BullMQ + Redis
-- **Validasi Skema:** Zod Validator
-- **Dokumentasi API:** OpenAPI / Swagger UI
+- **Asynchronous Task Queue:** BullMQ + Redis
+- **Schema Validation:** Zod Runtime Validator
+- **API Documentation:** OpenAPI / Swagger UI
 
-### 🖥️ Dashboard Web
+### 🖥️ Web Dashboard
 - **Framework:** Next.js 16 (App Router) + React 19
 - **Styling:** TailwindCSS
-- **Visualisasi Peta:** Leaflet & React Leaflet
-- **Ikonografi:** Lucide Icons
+- **Map Visualizations:** Leaflet & React Leaflet
+- **Icons:** Lucide Icons
 
 ---
 
-## 🌐 Dukungan Multi-Bahasa (i18n)
+## 🌐 Multi-Language Support (i18n)
 
-Qiaflo menyediakan lokalisasi penuh yang disinkronkan secara konsisten pada antarmuka aplikasi dan notifikasi sistem:
+Qiaflo features comprehensive 1:1 synchronized localization across both mobile client interfaces and server notification engines:
 
-| Kode | Bahasa | Wilayah Target |
+| Code | Language | Target Region |
 |:---:|---|---|
-| `id` | Bahasa Indonesia | Indonesia |
 | `en` | English | Global (Default) |
-| `es` | Español | Spanyol & Amerika Latin |
-| `pt` | Português | Brasil & Portugal |
-| `zh` | 中文 (简体) | Tiongkok & Asia Pasifik |
+| `id` | Indonesian (Bahasa Indonesia) | Indonesia |
+| `es` | Spanish (Español) | Spain & Latin America |
+| `pt` | Portuguese (Português) | Brazil & Portugal |
+| `zh` | Chinese (中文 简体) | Greater China & Asia Pacific |
 
 ---
 
-## 🛠 Panduan Memulai Cepat (Local Setup)
+## 🛠 Quick Start Guide (Local Setup)
 
-### Prasyarat:
-- [Flutter SDK](https://flutter.dev) versi stabil terbaru
-- [Node.js](https://nodejs.org) versi 20 LTS atau lebih baru
-- [Docker](https://www.docker.com/) (opsional untuk menjalankan database lokal)
+### Prerequisites:
+- [Flutter SDK](https://flutter.dev) (Latest Stable channel)
+- [Node.js](https://nodejs.org) (v20 LTS or newer)
+- [Docker](https://www.docker.com/) (Optional, for running local PostgreSQL & Redis)
 
-### 1. Kloning Repositori
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/dreamsoftlab/qiaflo.git
 cd qiaflo
 ```
 
-### 2. Menjalankan Backend (Fastify)
+### 2. Run Backend (Fastify)
 ```bash
 cd backend
 cp .env.example .env
-# Sesuaikan parameter konfigurasi database Anda di .env
+# Configure your local database and credentials in .env
 
 npm install
 npx prisma generate
 npx prisma db push
 npm run dev
 ```
-*API berjalan pada: `http://localhost:3000` (Dokumentasi Swagger: `http://localhost:3000/docs`)*
+*API runs at: `http://localhost:3000` (Swagger Documentation: `http://localhost:3000/docs`)*
 
-### 3. Menjalankan Dashboard Web (Next.js)
+### 3. Run Web Dashboard (Next.js)
 ```bash
 cd ../dashboard
 npm install
 npm run dev
 ```
-*Dashboard berjalan pada: `http://localhost:3001`*
+*Dashboard runs at: `http://localhost:3001`*
 
-### 4. Menjalankan Aplikasi Mobile (Flutter)
+### 4. Run Mobile App (Flutter)
 ```bash
 cd ../mobile
 flutter pub get
@@ -201,23 +201,23 @@ flutter run
 
 ---
 
-## 🔒 Keamanan & Privasi
+## 🔒 Security & Privacy
 
-- **Perlindungan Lokasi Pengguna:** Sistem pelacakan gotong-royong BLE bersifat anonim. Koordinat pemindai pasif hanya digunakan untuk memperbarui posisi perkiraan hewan hilang tanpa mengekspos identitas pemilik perangkat pemindai.
-- **Enkripsi Komunikasi:** Seluruh transfer data antara aplikasi mobile, backend, dan layanan cloud terenkripsi menggunakan protokol HTTPS / WSS (TLS 1.3).
-- **Keamanan Kredensial:** Seluruh token rahasia pihak ketiga diisolasi di lingkungan server backend dan tidak ditanamkan langsung di dalam kode biner aplikasi mobile.
-
----
-
-## 💎 Model Bisnis & Ekonomi In-App
-
-- **Akses Komunitas Gratis:** Fitur perlindungan dasar hewan, pembuatan profil, dan pencarian komunitas tersedia bagi seluruh pengguna.
-- **Layanan Premium:** Akses jumlah profil hewan tambahan, prioritas siaran notifikasi darurat, dan fasilitas konsultasi AI Guardian.
-- **Virtual Q-Coins:** Ekosistem koin dalam aplikasi yang dapat diperoleh melalui keaktifan jalan-jalan, penyelesaian kuis edukasi, atau opsi pembelian resmi.
+- **User Location Protection:** The community BLE search network is fully anonymized. Passive scanning coordinates only update the estimated location of lost pets without revealing scanner identity or movement history.
+- **Encrypted Transmission:** All communications between client applications, backend servers, and cloud services are encrypted via HTTPS and WSS (TLS 1.3).
+- **Credential Isolation:** All third-party secrets, keys, and credentials reside exclusively within secure server environments and are never bundled into distributed mobile binaries.
 
 ---
 
-## 📄 Lisensi & Hak Cipta
+## 💎 Business Model & In-App Economy
 
-Seluruh hak cipta dilindungi undang-undang © 2026 **DreamsoftLab**.  
-Proyek dan merek dagang Qiaflo dikelola oleh tim pengembang DreamsoftLab.
+- **Free Community Tier:** Essential pet safety profiles, community BLE searching, and basic features are permanently free for all users.
+- **Premium Subscription:** Extended pet capacity, prioritized emergency broadcast alerts, and monthly AI Guardian consultation benefits.
+- **Virtual Q-Coins:** An in-app virtual token economy earned via walking consistency, educational quiz completion, or official store purchases.
+
+---
+
+## 📄 License & Copyright
+
+Copyright © 2026 **DreamsoftLab**. All rights reserved.  
+The Qiaflo platform and its intellectual property are developed and maintained by the DreamsoftLab engineering team.
